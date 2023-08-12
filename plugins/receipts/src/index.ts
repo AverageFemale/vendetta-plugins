@@ -39,12 +39,13 @@ export default {
 async function pcommand(args: any, ctx: CommandContext ) {
     let value = args[0].value
     if (!value) return {content: `Something went wrong..\n\`${args[0].value}\``, ephemeral: true}
-    let content = "# Receipt"
+    let content = "# Receipt\n\n"
     value = value.split("|")
-    value.forEach(element => {
+    let ree = value.forEach(element => {
         let arrayOfShit = element.split("~")
         if (!arrayOfShit[0] || !arrayOfShit[1]) return {content: `Make sure your using the template provided in the description of the command.\n \`${args[0].value}\``, ephemeral: true};
-        content = content + `## ${arrayOfShit[0]} - ${arrayOfShit[1]}`
+        content = content + `### ${arrayOfShit[0]} - $${arrayOfShit[1]}`
     });
+    if (ree) return ree;
     return {content}
 }
