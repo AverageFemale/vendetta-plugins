@@ -14,7 +14,7 @@ export default {
             options: [{
                 name: "Items",
                 description: "Template: Name~Price|Name~Price",
-                type: ApplicationCommandOptionType.STRING,
+                type: 3,
                 displayName: "Items",
                 displayDescription: "Template: Name~Price|Name~Price",
             }],
