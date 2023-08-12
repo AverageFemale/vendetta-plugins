@@ -37,5 +37,5 @@ export default {
 
 async function pcommand(args: any, ctx: CommandContext ) {
     logger.info(args)
-    return {content: "\Woogaloo"}
+    return {content: "Woogaloo"}
 }
