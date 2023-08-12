@@ -15,6 +15,7 @@ export default {
                 name: "Items",
                 description: "Template: Name~Price|Name~Price",
                 type: 3,
+                required: true,
                 displayName: "Items",
                 displayDescription: "Template: Name~Price|Name~Price",
             }],
@@ -34,8 +35,15 @@ export default {
     settings: Settings,
 }
 
-
+// Args contains: [{type,name,value},{type,name,value}...]
 async function pcommand(args: any, ctx: CommandContext ) {
-    logger.log(args)
-    return {content: "Woogaloo"}
+    let value = args[0].value
+    let content = "# Receipt"
+    value = value.split("|")
+    value.forEach(element => {
+        let arrayOfShit = element.split("~")
+        if (!arrayOfShit[0] || !arrayOfShit[1]) return {content: `Make sure your using the template provided in the description of the command.\n \`${args[0].value}\``, ephemeral: true};
+        content = content + `## ${arrayOfShit[0]} - ${arrayOfShit[1]}`
+    });
+    return {content}
 }
