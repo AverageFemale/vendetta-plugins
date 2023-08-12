@@ -38,6 +38,7 @@ export default {
 // Args contains: [{type,name,value},{type,name,value}...]
 async function pcommand(args: any, ctx: CommandContext ) {
     let value = args[0].value
+    if (!value) return {content: `Something went wrong..\n\`${args[0].value}\``, ephemeral: true}
     let content = "# Receipt"
     value = value.split("|")
     value.forEach(element => {
