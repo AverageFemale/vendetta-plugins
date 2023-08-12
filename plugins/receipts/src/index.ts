@@ -37,5 +37,5 @@ export default {
 
 async function pcommand(args: any, ctx: CommandContext ) {
     logger.info(args)
-    return {content: "hi"}
+    return {content: "[Work in progress]"}
 }
