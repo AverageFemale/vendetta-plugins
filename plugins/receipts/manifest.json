@@ -1,5 +1,5 @@
 {
-    "name": "Receipts",
+    "name": "receipts",
     "description": "A plugin for making receipts.",
     "authors": [
         {
@@ -7,7 +7,7 @@
             "id": "524209191896875008"
         }
     ],
-    "main": "./src/index.ts",
+    "main": "src/index.ts",
     "vendetta": {
         "icon": "ic_badge_staff"
     }
