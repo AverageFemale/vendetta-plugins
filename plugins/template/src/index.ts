@@ -1,12 +1,41 @@
 import { logger } from "@vendetta";
+import { registerCommand } from "@vendetta/commands";
+import { findByStoreName, findByProps } from "@vendetta/metro";
+const UserStore = findByStoreName("UserStore");
 import Settings from "./Settings";
 
+let command;
 export default {
     onLoad: () => {
         logger.log("Hello world!");
+        command = registerCommand({
+            name: "receipt",
+            description: "Prepare a receipt for a user.",
+            options: [{
+                name: "Items",
+                description: "Template: Name~Price|Name~Price",
+                type: ApplicationCommandOptionType.STRING,
+                displayName: "Items",
+                displayDescription: "Template: Name~Price|Name~Price",
+            }],
+            execute: pcommand,
+            applicationId: "-1",
+            displayName: "receipt",
+            displayDescription: "Prepare a receipt for a user.",
+            inputType: 1,
+            type: 1
+        })
     },
+
     onUnload: () => {
-        logger.log("Goodbye, world.");
+        command();
+
     },
     settings: Settings,
+}
+
+
+async function pcommand(args: any, ctx: CommandContext ) {
+    logger.info(args)
+    return {content: "hi"}
 }
