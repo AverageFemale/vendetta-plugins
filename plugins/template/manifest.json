@@ -1,10 +1,10 @@
 {
-    "name": "Template Plugin",
-    "description": "A plugin for use as a template.",
+    "name": "Receipt Plugin",
+    "description": "A plugin for making receipts.",
     "authors": [
         {
-            "name": "You!",
-            "id": "YOUR_ID_HERE"
+            "name": "HTMLAria",
+            "id": "524209191896875008"
         }
     ],
     "main": "src/index.ts",
